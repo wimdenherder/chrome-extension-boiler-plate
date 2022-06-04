@@ -1,0 +1,41 @@
+{
+  "name": "Dubbify",
+  "description": "Dubbify YouTube videos",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://youtube.com/*",
+        "*://youtu.be/*"
+      ],
+      "js": [
+        "content-script.js"
+      ],
+      "css": []
+    }
+  ],
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "action": {
+    "default_title": "__MSG_PageActionDefaultTitle__",
+    "default_icon": {
+      "19": "icon/on19.png",
+      "24": "icon/on24.png",
+      "32": "icon/on32.png"
+    }
+  }
+}
